@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the application code
 COPY . .
 
+# Given permissions to mvnw
+RUN chmod +x mvnw
+
 # Build the application (requires Maven or Gradle)
 RUN ./mvnw clean package -DskipTests
 
